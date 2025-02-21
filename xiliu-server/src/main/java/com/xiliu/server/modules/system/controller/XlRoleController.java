@@ -75,7 +75,7 @@ public class XlRoleController extends BaseController{
         } else if (UserConstants.NOT_UNIQUE.equals(roleService.checkRoleKeyUnique(role))) {
             return R.error("修改角色'" + role.getRoleName() + "'失败，角色权限已存在");
         }
-        boolean success = roleService.updateById(role);
+        boolean success = roleService.updateRole(role);
         if (success) {
             return R.ok();
         }
